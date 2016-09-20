@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - 2.3.0
+after_success:
+  - git remote add deployref git@github.com:kotsaris/shippable-deploy.git
+  - git push deployref master:testbranch
