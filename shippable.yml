@@ -4,5 +4,4 @@ rvm:
 script:
   - echo "foo"
 after_success:
-  - git remote add deployref git@github.com:kotsaris/shippable-deploy.git
-  - git push deployref master:testbranch
+  - ./deploy.sh $BRANCH $PULL_REQUEST
