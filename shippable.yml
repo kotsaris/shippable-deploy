@@ -4,4 +4,5 @@ rvm:
 script:
   - echo "foo"
 after_success:
+  - chmod +x ./deploy.sh
   - ./deploy.sh $BRANCH $PULL_REQUEST
