@@ -1,8 +1,14 @@
 language: ruby
 rvm:
   - 2.3.0
+env:
+  global:
+    - DEPLOY_TO_GIT_ORIGIN=git@github.com:kotsaris/shippable-deploy.git
+    - DEPLOY_TO_BRANCH=gh-pages
+    - DEPLOY_FROM_BRANCH=master
+
 script:
   - echo "foo"
 after_success:
   - chmod +x ./deploy.sh
-  - ./deploy.sh $BRANCH $PULL_REQUEST
+  - ./deploy.sh $BRANCH $PULL_REQUEST $DEPLOY_TO_GIT_ORIGIN $DEPLOY_FROM_BRANCH $DEPLOY_TO_BRANCH
