@@ -1,5 +1,5 @@
 echo "Current branch is $1 and is this a pull request=$2"
-if [ $1 != "master" -o $2 = 0 ]
+if [ $1 != "master" -o $2 = 1 ]
 then
   echo "Not deploying to gh-pages"
   exit 0
