@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.3.0
+script:
+  - echo "foo"
 after_success:
   - git remote add deployref git@github.com:kotsaris/shippable-deploy.git
   - git push deployref master:testbranch
